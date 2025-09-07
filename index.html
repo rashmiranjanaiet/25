@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight Background Effect</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url("78928204.png") no-repeat center center/cover;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      overflow: hidden;
+      position: relative;
+      color: white;
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    /* Dark overlay that hides everything */
+    .mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle 120px at center, transparent 0%, rgba(0,0,0,0.97) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="text">
+    🌌 Welcome to RashmiRanjan’s Neon World 🌌<br>
+    Move your mouse to reveal hidden text and background!
+  </div>
+
+  <div class="mask" id="mask"></div>
+
+  <script>
+    const mask = document.getElementById("mask");
+
+    document.addEventListener("mousemove", (e) => {
+      mask.style.background = `radial-gradient(circle 150px at ${e.clientX}px ${e.clientY}px, transparent 0%, rgba(0,0,0,0.97) 100%)`;
+    });
+  </script>
+</body>
+</html>
